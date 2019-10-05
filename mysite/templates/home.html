@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block styling %}
+<style>
+  .jumbotron{
+      background-image: url(show-copy.jpg) ;
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+  }
+ </style>
+{% endblock %}
+{% block content %}
+<div class="container-full-bg">  <!--  increased the jumbotron width -->
+        <div class="jumbotron ">
+            <div class="container">
+              <br><br><br>
+              {% if user.is_authenticated %}
+              <h3 align="center"> Hi, {{user.username}} </h3>
+              {% else %}
+              <h3 align="center"> Intranet </h3>
+              <h5 align="center">You are not logged in</h1>
+              {% endif %}
+              <br><br><br><br>
+            </div>
+        </div>
+</div>
+{% endblock %}
